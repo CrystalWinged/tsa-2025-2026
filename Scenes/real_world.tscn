@@ -1,4 +1,4 @@
-[gd_scene load_steps=59 format=4 uid="uid://c71dc5ncti336"]
+[gd_scene load_steps=60 format=4 uid="uid://c71dc5ncti336"]
 
 [ext_resource type="PackedScene" uid="uid://bidqf4yv0r2s8" path="res://Scenes/player.tscn" id="1_kvxa5"]
 [ext_resource type="Script" uid="uid://byemjtrydjtl7" path="res://Scripts/modifiedplayer.gd" id="2_m87n8"]
@@ -5567,6 +5567,35 @@ size = Vector2(34, 20)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dhc67"]
 size = Vector2(28, 20)
 
+[sub_resource type="GDScript" id="GDScript_lxihi"]
+resource_name = "npc2"
+script/source = "extends CharacterBody2D
+
+
+const SPEED = 300.0
+const JUMP_VELOCITY = -400.0
+
+
+func _physics_process(delta: float) -> void:
+	# Add the gravity.
+	if not is_on_floor():
+		velocity += get_gravity() * delta
+
+	# Handle jump.
+	if Input.is_action_just_pressed(\"ui_accept\") and is_on_floor():
+		velocity.y = JUMP_VELOCITY
+
+	# Get the input direction and handle the movement/deceleration.
+	# As good practice, you should replace UI actions with custom gameplay actions.
+	var direction := Input.get_axis(\"ui_left\", \"ui_right\")
+	if direction:
+		velocity.x = direction * SPEED
+	else:
+		velocity.x = move_toward(velocity.x, 0, SPEED)
+
+	move_and_slide()
+"
+
 [node name="real_world" type="Node2D"]
 
 [node name="Tilemaps" type="Node" parent="."]
@@ -6129,6 +6158,7 @@ texture = ExtResource("44_ffpoc")
 [node name="NPCImage" parent="." instance=ExtResource("47_7fgxi")]
 z_index = 1
 position = Vector2(50, 94)
+script = SubResource("GDScript_lxihi")
 
 [node name="attentionSigns" type="Node" parent="."]
 
@@ -6192,7 +6222,7 @@ texture = ExtResource("49_nmwkf")
 
 [node name="Hay3" type="Sprite2D" parent="mysterious room"]
 z_index = 3
-position = Vector2(-168, 106)
+position = Vector2(-177, 119)
 texture = ExtResource("49_nmwkf")
 
 [node name="Trash2" type="Sprite2D" parent="mysterious room"]
@@ -6202,37 +6232,37 @@ texture = ExtResource("9_w5afj")
 
 [node name="Trash3" type="Sprite2D" parent="mysterious room"]
 z_index = 2
-position = Vector2(-172, 153)
+position = Vector2(-152, 151)
 texture = ExtResource("9_w5afj")
 
 [node name="Trash4" type="Sprite2D" parent="mysterious room"]
 z_index = 2
-position = Vector2(-160, 155)
+position = Vector2(-147, 103)
 texture = ExtResource("9_w5afj")
 
 [node name="Trash5" type="Sprite2D" parent="mysterious room"]
 z_index = 2
-position = Vector2(-149, 159)
+position = Vector2(-183, 137)
 texture = ExtResource("9_w5afj")
 
 [node name="Trash6" type="Sprite2D" parent="mysterious room"]
 z_index = 2
-position = Vector2(-168, 147)
+position = Vector2(-169, 140)
 texture = ExtResource("9_w5afj")
 
 [node name="Trash7" type="Sprite2D" parent="mysterious room"]
 z_index = 2
-position = Vector2(-156, 148)
+position = Vector2(-139, 120)
 texture = ExtResource("9_w5afj")
 
 [node name="Trash8" type="Sprite2D" parent="mysterious room"]
 z_index = 2
-position = Vector2(-163, 140)
+position = Vector2(-150, 136)
 texture = ExtResource("9_w5afj")
 
 [node name="Trash9" type="Sprite2D" parent="mysterious room"]
 z_index = 2
-position = Vector2(-163, 140)
+position = Vector2(-162, 125)
 texture = ExtResource("9_w5afj")
 
 [node name="Muddyfootprints" type="Sprite2D" parent="mysterious room"]

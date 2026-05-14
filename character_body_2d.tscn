@@ -221,11 +221,11 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="CharacterBody2D" type="CharacterBody2D"]
+[node name="npc2rw" type="CharacterBody2D"]
 script = SubResource("GDScript_ij6vw")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(-26, -40.00003)
+position = Vector2(-27, -29)
 scale = Vector2(3.6886792, 3.382716)
 sprite_frames = SubResource("SpriteFrames_8gu1l")
 animation = &"back-walk"

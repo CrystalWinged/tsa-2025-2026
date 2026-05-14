@@ -1,5 +1,19 @@
-[gd_scene format=3 uid="uid://b5m6f0oxmpsae"]
+[gd_scene load_steps=2 format=3 uid="uid://b5m6f0oxmpsae"]
+
+[ext_resource type="Texture2D" uid="uid://crf6bx458ryor" path="res://Assets/sprites/fairylights.png" id="1_w5de2"]
 
 [node name="GALAGA" type="Node2D"]
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+
+[node name="TileMap" type="TileMap" parent="CharacterBody2D"]
+format = 2
+
+[node name="TileMapLayer" type="TileMapLayer" parent="CharacterBody2D/TileMap"]
+
+[node name="TileMapLayer2" type="TileMapLayer" parent="CharacterBody2D/TileMap"]
+
+[node name="Fairylights" type="Sprite2D" parent="."]
+position = Vector2(152, 68)
+scale = Vector2(8.5, 8.125)
+texture = ExtResource("1_w5de2")

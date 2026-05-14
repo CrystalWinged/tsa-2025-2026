@@ -127,6 +127,5 @@ autoplay = "Walk Front"
 frame_progress = 0.57825565
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-visible = false
 position = Vector2(1, 0)
 shape = SubResource("CircleShape2D_v0iea")
