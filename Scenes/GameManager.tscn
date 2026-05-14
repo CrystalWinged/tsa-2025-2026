@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://dy36cfmrtkbu3"]
+
+[sub_resource type="GDScript" id="GDScript_4gbyi"]
+resource_name = "gamemanager"
+script/source = "class_name QuestManager extends Node2D
+"
+
+[node name="GameManager" type="Node2D"]
+script = SubResource("GDScript_4gbyi")

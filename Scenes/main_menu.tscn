@@ -1,0 +1,147 @@
+[gd_scene load_steps=13 format=3 uid="uid://bxsy5qaxwygp"]
+
+[ext_resource type="Texture2D" uid="uid://bl8fdc54hdluq" path="res://Assets/sprites/pixilart-sprite (6).png" id="1_28flt"]
+[ext_resource type="Texture2D" uid="uid://b6fftbup8j1tb" path="res://Assets/sprites/blackbackground.jpg" id="1_48xlc"]
+[ext_resource type="FontFile" uid="uid://ch3n006qv06l7" path="res://Assets/fonts/PixelOperator8-Bold.ttf" id="3_ce3w2"]
+[ext_resource type="Texture2D" uid="uid://r44k3saj35f4" path="res://Assets/sprites/worker.png" id="4_n45e2"]
+
+[sub_resource type="GDScript" id="GDScript_erv1k"]
+script/source = "extends Node2D
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
+
+
+func _on_start_pressed() -> void:
+	get_tree().change_scene_to_file(\"res://Scenes/real_world.tscn\")
+
+
+func _on_options_pressed() -> void:
+	pass # Replace with function body.
+
+
+func _on_quit_pressed() -> void:
+	get_tree().quit()
+"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_48xlc"]
+atlas = ExtResource("1_28flt")
+region = Rect2(0, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1ehe0"]
+atlas = ExtResource("1_28flt")
+region = Rect2(100, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ce3w2"]
+atlas = ExtResource("1_28flt")
+region = Rect2(200, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n45e2"]
+atlas = ExtResource("1_28flt")
+region = Rect2(300, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_opfnp"]
+atlas = ExtResource("1_28flt")
+region = Rect2(400, 0, 100, 100)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_cp0ys"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_48xlc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1ehe0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ce3w2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n45e2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_opfnp")
+}],
+"loop": true,
+"name": &"FlickeringScreen",
+"speed": 17.0
+}]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_opfnp"]
+bg_color = Color(0.14481285, 0.00015765228, 0.22550642, 1)
+
+[node name="Main Menu" type="Node2D"]
+script = SubResource("GDScript_erv1k")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_48xlc")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(53, 48)
+scale = Vector2(1.2182517, 0.9097452)
+sprite_frames = SubResource("SpriteFrames_cp0ys")
+animation = &"FlickeringScreen"
+autoplay = "FlickeringScreen"
+frame_progress = 0.4171943
+
+[node name="Camera2D" type="Camera2D" parent="AnimatedSprite2D"]
+zoom = Vector2(7, 7)
+
+[node name="ButtonManager" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 20.0
+offset_top = 57.999996
+offset_right = 60.0
+offset_bottom = 97.999985
+scale = Vector2(0.20498271, 0.33415663)
+
+[node name="Start" type="Button" parent="ButtonManager"]
+layout_mode = 0
+offset_left = 14.635379
+offset_top = -35.91129
+offset_right = 60.635384
+offset_bottom = -4.911289
+scale = Vector2(1.9512031, 1)
+theme_override_fonts/font = ExtResource("3_ce3w2")
+theme_override_font_sizes/font_size = 9
+theme_override_styles/normal = SubResource("StyleBoxFlat_opfnp")
+text = "Start "
+
+[node name="Quit" type="Button" parent="ButtonManager"]
+layout_mode = 0
+offset_left = 24.3923
+offset_top = 2.9926343
+offset_right = 66.3923
+offset_bottom = 33.992634
+scale = Vector2(1.5609381, 1)
+theme_override_fonts/font = ExtResource("3_ce3w2")
+theme_override_font_sizes/font_size = 9
+theme_override_styles/normal = SubResource("StyleBoxFlat_opfnp")
+text = "Quit"
+
+[node name="Label" type="Label" parent="."]
+offset_left = 15.0
+offset_top = 20.0
+offset_right = 107.0
+offset_bottom = 45.0
+theme_override_colors/font_color = Color(0.2177558, 0.008824556, 0.3661643, 1)
+theme_override_fonts/font = ExtResource("3_ce3w2")
+theme_override_font_sizes/font_size = 9
+text = "Pixel 
+Prison"
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(67, 53)
+scale = Vector2(0.077561595, 0.069106326)
+texture = ExtResource("4_n45e2")
+
+[connection signal="pressed" from="ButtonManager/Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="ButtonManager/Quit" to="." method="_on_quit_pressed"]

@@ -1,0 +1,75 @@
+{
+	"phone": [
+		{
+			"name": "Phone",
+			"image": "telephone.png",
+			"text": "*ring ring*"
+		},
+		{
+			"name": "Phone",
+			"image": "telephone.png",
+			"text": "You have a new voice message!"
+		},
+		{
+			"name": "Grandma",
+			"image": "grandma.png",
+			"text": "Hey dear, make sure to clean up the arcade while we're gone!"
+		}
+		
+	],
+	
+	"brokenArcade": [
+		{
+			"name": "You",
+			"image": "worker.png",
+			"text": "Something about this seems...strange"
+		},
+		{
+			"name": "You",
+			"image": "worker.png",
+			"text": "Hm? What's that?"
+		},
+		{
+			"name": "You",
+			"image": "worker.png",
+			"text": "!!!"
+		}
+		
+	], 
+	
+	"door": [
+		{
+			"name": "Door",
+			"image": "worker.png",
+			"text": "As much as you'd like to leave right now, you promised your grandma you'd take care of the arcade until she returns."
+		},
+		{
+			"name": "Door",
+			"image": "worker.png",
+			"text": "You really regret it now huh?"
+		}
+	],
+	
+	
+	"file": [
+	{
+		"name": "File",
+		"image": "folder.png",
+		"text": "A worker's file. Your name is on it."
+	}
+	],
+	"cashregister":[
+	{
+		"name": "Cash Register",
+		"image": "cashregister.png",
+		"text": "A cash register."
+	},
+	{
+		"name": "Cash Register",
+		"image": "cashregister.png",
+		"text": "Everything seems to be in order."
+	}	
+	]
+	
+	
+}

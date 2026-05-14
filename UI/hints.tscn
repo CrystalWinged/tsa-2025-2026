@@ -1,0 +1,46 @@
+[gd_scene load_steps=3 format=3 uid="uid://55mexstc77is"]
+
+[ext_resource type="FontFile" uid="uid://b2vaot6dp4s8x" path="res://Assets/fonts/PixelOperator8.ttf" id="1_1kbc4"]
+
+[sub_resource type="GDScript" id="GDScript_lgg3d"]
+resource_name = "diretions"
+script/source = "extends CanvasLayer
+
+@onready var hints = $directions
+@onready var background = $directions/Panel
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	hidehints()
+
+func showhints(directions):
+	hints.visible = true
+	hints.text = directions
+	
+func hidehints():
+	hints.visible = false
+	 
+	
+	
+"
+
+[node name="hints" type="CanvasLayer"]
+script = SubResource("GDScript_lgg3d")
+
+[node name="directions" type="Label" parent="."]
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -16.0
+offset_top = -32.0
+offset_right = -16.0
+offset_bottom = -17.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/shadow_offset_y = 7
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("1_1kbc4")
+theme_override_font_sizes/font_size = 24
+text = "HelpfulText"
+horizontal_alignment = 1

@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://cteidhmt3olj8"]
+
+[ext_resource type="Script" uid="uid://cqal44a3048ss" path="res://Scripts/hurt.tres.gd" id="1_qvfex"]
+[ext_resource type="AudioStream" uid="uid://c0422406a2kp0" path="res://Assets/sounds/hurt.wav" id="2_8xs0g"]
+
+[node name="Hurt" type="Area2D"]
+collision_mask = 2
+script = ExtResource("1_qvfex")
+
+[node name="Timer" type="Timer" parent="."]
+
+[node name="hurt" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_8xs0g")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

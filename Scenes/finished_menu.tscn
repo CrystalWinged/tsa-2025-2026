@@ -1,0 +1,129 @@
+[gd_scene load_steps=12 format=3 uid="uid://bpqgc64ci44fy"]
+
+[ext_resource type="Texture2D" uid="uid://b6fftbup8j1tb" path="res://Assets/sprites/blackbackground.jpg" id="1_uffbw"]
+[ext_resource type="Texture2D" uid="uid://bl8fdc54hdluq" path="res://Assets/sprites/pixilart-sprite (6).png" id="2_gajpk"]
+[ext_resource type="FontFile" uid="uid://ch3n006qv06l7" path="res://Assets/fonts/PixelOperator8-Bold.ttf" id="3_gajpk"]
+
+[sub_resource type="GDScript" id="GDScript_erv1k"]
+script/source = "extends Node2D
+
+
+
+func _on_replay_pressed() -> void:
+	get_tree().change_scene_to_file(\"res://Scenes/main_menu.tscn\")
+	
+
+func _on_quit_pressed() -> void:
+	get_tree().quit()
+"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_48xlc"]
+atlas = ExtResource("2_gajpk")
+region = Rect2(0, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1ehe0"]
+atlas = ExtResource("2_gajpk")
+region = Rect2(100, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ce3w2"]
+atlas = ExtResource("2_gajpk")
+region = Rect2(200, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n45e2"]
+atlas = ExtResource("2_gajpk")
+region = Rect2(300, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_opfnp"]
+atlas = ExtResource("2_gajpk")
+region = Rect2(400, 0, 100, 100)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_cp0ys"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_48xlc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1ehe0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ce3w2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n45e2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_opfnp")
+}],
+"loop": true,
+"name": &"FlickeringScreen",
+"speed": 17.0
+}]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gajpk"]
+bg_color = Color(0.23982844, 0.0003118632, 0.33863476, 1)
+
+[node name="Finished Menu" type="Node2D"]
+scale = Vector2(1.001777, 0.9982564)
+script = SubResource("GDScript_erv1k")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_uffbw")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(53.000004, 48)
+scale = Vector2(1.2182517, 0.9097452)
+sprite_frames = SubResource("SpriteFrames_cp0ys")
+animation = &"FlickeringScreen"
+autoplay = "FlickeringScreen"
+frame_progress = 0.4171943
+
+[node name="Camera2D" type="Camera2D" parent="AnimatedSprite2D"]
+zoom = Vector2(7, 7)
+
+[node name="ButtonManager" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 41.0
+offset_top = 63.999996
+offset_right = 81.0
+offset_bottom = 103.999985
+scale = Vector2(0.20498271, 0.33415663)
+
+[node name="Replay" type="Button" parent="ButtonManager"]
+layout_mode = 0
+offset_left = -58.541527
+offset_top = -47.881714
+offset_right = 42.458473
+offset_bottom = -16.881714
+scale = Vector2(2.4400012, 1)
+theme_override_font_sizes/font_size = 9
+theme_override_styles/normal = SubResource("StyleBoxFlat_gajpk")
+text = "Return to Main Menu"
+
+[node name="Quit" type="Button" parent="ButtonManager"]
+layout_mode = 0
+offset_left = 9.756922
+offset_top = -14.963029
+offset_right = 51.75692
+offset_bottom = 16.036972
+scale = Vector2(2.4400012, 1)
+theme_override_font_sizes/font_size = 12
+theme_override_styles/normal = SubResource("StyleBoxFlat_gajpk")
+text = "Quit"
+
+[node name="Label" type="Label" parent="."]
+offset_left = -5.0
+offset_top = 27.0
+offset_right = 110.0
+offset_bottom = 50.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_gajpk")
+theme_override_font_sizes/font_size = 7
+text = "Thanks for 
+Playing"
+horizontal_alignment = 1
+
+[connection signal="pressed" from="ButtonManager/Replay" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="ButtonManager/Replay" to="." method="_on_replay_pressed"]
+[connection signal="pressed" from="ButtonManager/Quit" to="." method="_on_quit_pressed"]

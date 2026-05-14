@@ -1,0 +1,122 @@
+[gd_scene load_steps=7 format=3 uid="uid://das7jot83iixg"]
+
+[ext_resource type="Texture2D" uid="uid://dkf8tlru22icb" path="res://Assets/sprites/grandma.png" id="1_f3obc"]
+[ext_resource type="Script" uid="uid://3wlkxlaqmr6y" path="res://UI/REVISEDDIALOGUEBOX.gd" id="1_puenu"]
+[ext_resource type="FontFile" uid="uid://ch3n006qv06l7" path="res://Assets/fonts/PixelOperator8-Bold.ttf" id="2_puenu"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_i05h3"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_b8rgn"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_wnlif"]
+
+[node name="DialogueManager" type="CanvasLayer"]
+process_mode = 2
+script = ExtResource("1_puenu")
+
+[node name="Image" type="TextureRect" parent="."]
+process_mode = 2
+z_index = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 36.0
+offset_top = -232.0
+offset_right = 1036.0
+offset_bottom = 768.0
+grow_vertical = 0
+scale = Vector2(0.22124518, 0.17663375)
+texture = ExtResource("1_f3obc")
+expand_mode = 1
+stretch_mode = 6
+metadata/_edit_use_anchors_ = true
+
+[node name="ImageBackground" type="TextureRect" parent="Image"]
+modulate = Color(0.025840001, 0.025840001, 0.025840001, 0.41500002)
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.014598846
+anchor_top = 0.8812341
+anchor_right = -0.014598846
+anchor_bottom = 0.8812341
+offset_left = -0.00012207031
+offset_top = -1002.98
+offset_right = 499.99988
+offset_bottom = -502.97998
+grow_vertical = 0
+scale = Vector2(2.1958477, 2.5957484)
+texture = SubResource("CanvasTexture_i05h3")
+metadata/_edit_use_anchors_ = true
+
+[node name="TextLabel" type="Label" parent="."]
+modulate = Color(0.9362647, 0.9362648, 0.9362647, 1)
+anchors_preset = -1
+anchor_right = 3.217882
+anchor_bottom = 1.0
+offset_left = 304.0
+offset_top = 472.0
+offset_right = 304.0
+offset_bottom = 472.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.22124517, 0.17781039)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_puenu")
+theme_override_font_sizes/font_size = 124
+text = "hihi"
+autowrap_mode = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="Background" type="TextureRect" parent="TextLabel"]
+modulate = Color(0, 0, 0, 0.48700002)
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -76.34982
+offset_top = -722.0061
+offset_right = -76.34985
+offset_bottom = 77.9939
+grow_horizontal = 2
+grow_vertical = 0
+scale = Vector2(1.0121833, 0.92985845)
+texture = SubResource("CanvasTexture_b8rgn")
+metadata/_edit_use_anchors_ = true
+
+[node name="TextLabel2" type="Label" parent="."]
+modulate = Color(0.9362647, 0.9362648, 0.9362647, 1)
+z_index = 1
+anchors_preset = -1
+anchor_top = 0.5
+anchor_right = 0.5529514
+anchor_bottom = 0.712963
+offset_left = 316.0
+offset_top = 102.0
+offset_right = 317.0
+offset_bottom = 114.0
+grow_vertical = 2
+scale = Vector2(0.22124518, 0.17781045)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_puenu")
+theme_override_font_sizes/font_size = 124
+text = "NAME"
+horizontal_alignment = 1
+autowrap_mode = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="NameBg" type="TextureRect" parent="TextLabel2"]
+modulate = Color(0, 0, 0, 0.45000002)
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.6953125
+offset_left = -119.504
+offset_top = -14.801193
+offset_right = 80.49597
+offset_bottom = 185.19879
+scale = Vector2(1.4962845, 0.8114488)
+texture = SubResource("CanvasTexture_wnlif")
+metadata/_edit_use_anchors_ = true

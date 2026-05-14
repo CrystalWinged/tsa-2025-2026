@@ -1,0 +1,111 @@
+[gd_scene load_steps=5 format=3 uid="uid://drggrk2g7sh1p"]
+
+[ext_resource type="Texture2D" uid="uid://r44k3saj35f4" path="res://Assets/sprites/worker.png" id="1_0won0"]
+[ext_resource type="Texture2D" uid="uid://chw2qcqgcfltx" path="res://Assets/sprites/openfolder.png" id="1_nmpoq"]
+[ext_resource type="FontFile" uid="uid://ch3n006qv06l7" path="res://Assets/fonts/PixelOperator8-Bold.ttf" id="3_67gqa"]
+
+[sub_resource type="GDScript" id="GDScript_0won0"]
+resource_name = "open_folder"
+script/source = "extends CanvasLayer
+
+@onready var panel = $Panel
+@onready var folderBG = $folderBG
+@onready var workerimage = $workerImage
+@onready var words = $title2
+
+func _ready() -> void:
+	closefolder()
+
+func openfolder():
+	panel.visible = true
+	folderBG.visible = true
+	workerimage.visible = true
+	words.visible = true
+	
+func closefolder():
+	panel.visible = false
+	folderBG.visible = false
+	workerimage.visible = false
+	words.visible = false
+	
+"
+
+[node name="folder_contents" type="CanvasLayer"]
+script = SubResource("GDScript_0won0")
+
+[node name="Panel" type="Panel" parent="."]
+offset_left = 224.0
+offset_top = -16.0
+offset_right = 264.0
+offset_bottom = 24.0
+scale = Vector2(16.08, 16.84)
+
+[node name="workerImage" type="TextureRect" parent="."]
+z_index = 1
+offset_left = 648.0
+offset_top = 104.0
+offset_right = 1155.0
+offset_bottom = 612.0
+scale = Vector2(0.18759596, 0.20109887)
+texture = ExtResource("1_0won0")
+expand_mode = 1
+
+[node name="folderBG" type="TextureRect" parent="."]
+offset_left = 77.0
+offset_top = -129.0
+offset_right = 117.0
+offset_bottom = -89.0
+scale = Vector2(25.355675, 21.32)
+texture = ExtResource("1_nmpoq")
+stretch_mode = 3
+
+[node name="title2" type="Label" parent="."]
+z_index = 2
+offset_left = 448.0
+offset_top = 96.0
+offset_right = 660.0
+offset_bottom = 119.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_67gqa")
+text = "Arcade Archive"
+
+[node name="description" type="Label" parent="title2"]
+layout_mode = 0
+offset_left = 72.0
+offset_top = 112.0
+offset_right = 304.0
+offset_bottom = 395.0
+theme_override_colors/font_color = Color(0.017732391, 0.017732391, 0.01773239, 1)
+text = "As of today, you will be working here in  the absence of your grandma, the owner of this antique arcade.
+
+Due to financial struggles, your grandma was unable to hire other workers -- you will be taking care of all tasks while she's gone."
+autowrap_mode = 2
+
+[node name="description2" type="Label" parent="title2"]
+layout_mode = 0
+offset_left = 112.0
+offset_top = 384.0
+offset_right = 304.0
+offset_bottom = 485.0
+theme_override_colors/font_color = Color(0.017732391, 0.017732391, 0.01773239, 1)
+theme_override_font_sizes/font_size = 12
+text = "P.S. DO NOT touch the arcade with the OUT OF ORDER sign. It might be dangerous!
+
+"
+horizontal_alignment = 2
+autowrap_mode = 2
+
+[node name="name" type="Label" parent="title2"]
+z_index = 2
+layout_mode = 0
+offset_left = 40.0
+offset_top = 32.0
+offset_right = 236.0
+offset_bottom = 109.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_67gqa")
+theme_override_font_sizes/font_size = 12
+text = "Name: Lily Loo
+
+DOB: 5.12
+"

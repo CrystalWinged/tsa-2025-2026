@@ -1,0 +1,113 @@
+[gd_scene load_steps=4 format=3 uid="uid://c7aalpkxjd2lj"]
+
+[ext_resource type="FontFile" uid="uid://b2vaot6dp4s8x" path="res://Assets/fonts/PixelOperator8.ttf" id="1_x8nsl"]
+
+[sub_resource type="GDScript" id="GDScript_x8nsl"]
+resource_name = "objective_manager"
+script/source = "extends CanvasLayer
+var counter = 0
+var finished_tasks = 0
+
+@onready var objective_description = $\"Quest Description\"
+@onready var task_title = $\"Quest Name\"
+@onready var status1 = $status1
+@onready var status2 = $status2
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	updateTasks(\"Explore\", \"Look around the arcade\", \"Explored: \" + str(counter) + \"/4\", \"\")
+	
+func updateTasks(title, description, stat1, stat2):
+	task_title.text = title
+	objective_description.text = description
+	status1.text = stat1
+	status2.text = stat2
+	print(stat1)
+	finished_tasks += 1
+	print(finished_tasks)
+"
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_uimku"]
+
+[node name="Task Bar" type="CanvasLayer"]
+script = SubResource("GDScript_x8nsl")
+
+[node name="ObjectiveBG" type="TextureRect" parent="."]
+modulate = Color(0, 0, 0, 0.48900002)
+show_behind_parent = true
+offset_top = 3.000002
+offset_right = 40.0
+offset_bottom = 43.0
+scale = Vector2(10.939973, 5.7920184)
+texture = SubResource("CanvasTexture_uimku")
+metadata/_edit_use_anchors_ = true
+
+[node name="Quest Description" type="Label" parent="."]
+anchors_preset = -1
+anchor_left = 0.088069454
+anchor_top = 0.15300001
+anchor_right = 0.22219892
+anchor_bottom = 0.15300001
+offset_left = -70.45601
+offset_top = -24.144005
+offset_right = 45.54399
+offset_bottom = -4.144005
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.5304998, 1.8649253)
+theme_override_fonts/font = ExtResource("1_x8nsl")
+theme_override_font_sizes/font_size = 14
+text = "hjshadaksdjalk"
+autowrap_mode = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="Quest Name" type="Label" parent="."]
+show_behind_parent = true
+anchors_preset = -1
+anchor_top = -0.029320987
+anchor_right = 0.11386122
+anchor_bottom = -0.029320987
+offset_left = 14.0
+offset_top = 31.0
+offset_right = 109.0
+offset_bottom = 66.0
+scale = Vector2(1.6635869, 1.7931973)
+theme_override_fonts/font = ExtResource("1_x8nsl")
+theme_override_font_sizes/font_size = 16
+text = "Task 1"
+autowrap_mode = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="status1" type="Label" parent="."]
+show_behind_parent = true
+anchors_preset = -1
+anchor_top = -0.027747165
+anchor_right = 0.1004574
+anchor_bottom = -0.027747165
+offset_left = 42.000004
+offset_top = 128.0
+offset_right = 137.0
+offset_bottom = 163.0
+scale = Vector2(1.6635869, 1.7931973)
+theme_override_fonts/font = ExtResource("1_x8nsl")
+theme_override_font_sizes/font_size = 12
+text = "Status 1 "
+autowrap_mode = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="status2" type="Label" parent="."]
+show_behind_parent = true
+anchors_preset = -1
+anchor_top = -0.02701757
+anchor_right = 0.051178668
+anchor_bottom = -0.02701757
+offset_left = 42.000004
+offset_top = 174.0
+offset_right = 137.0
+offset_bottom = 209.0
+scale = Vector2(1.6635869, 1.7931973)
+theme_override_fonts/font = ExtResource("1_x8nsl")
+theme_override_font_sizes/font_size = 12
+text = "Status 2"
+autowrap_mode = 2
+metadata/_edit_use_anchors_ = true

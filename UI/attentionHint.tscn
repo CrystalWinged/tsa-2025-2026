@@ -1,0 +1,69 @@
+[gd_scene load_steps=9 format=3 uid="uid://cypttfl8lj8bs"]
+
+[ext_resource type="Texture2D" uid="uid://dlgy35thn68a6" path="res://Assets/sprites/attentionSignal.png" id="1_18nck"]
+[ext_resource type="Script" uid="uid://ceshhxayu4vd" path="res://UI/attentionsignscript.gd" id="1_36kme"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_36kme"]
+atlas = ExtResource("1_18nck")
+region = Rect2(1, 0, 34, 27)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ntecs"]
+atlas = ExtResource("1_18nck")
+region = Rect2(35, 0, 34, 27)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h4iid"]
+atlas = ExtResource("1_18nck")
+region = Rect2(69, 0, 34, 27)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xyeuq"]
+atlas = ExtResource("1_18nck")
+region = Rect2(103, 0, 34, 27)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ypwpr"]
+atlas = ExtResource("1_18nck")
+region = Rect2(137, 0, 34, 27)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_dpeh6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_36kme")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ntecs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h4iid")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xyeuq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ypwpr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xyeuq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h4iid")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ntecs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_36kme")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[node name="attention!" type="CharacterBody2D"]
+script = ExtResource("1_36kme")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_dpeh6")
+autoplay = "default"
+frame_progress = 0.1458108
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
