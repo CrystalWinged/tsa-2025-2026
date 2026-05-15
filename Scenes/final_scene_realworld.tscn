@@ -1,4 +1,4 @@
-[gd_scene load_steps=53 format=4 uid="uid://betila1y5lnxq"]
+[gd_scene load_steps=55 format=4 uid="uid://betila1y5lnxq"]
 
 [ext_resource type="PackedScene" uid="uid://bidqf4yv0r2s8" path="res://Scenes/player.tscn" id="1_j6rcm"]
 [ext_resource type="Script" uid="uid://byemjtrydjtl7" path="res://Scripts/modifiedplayer.gd" id="2_x1b4w"]
@@ -7,8 +7,10 @@
 [ext_resource type="Texture2D" uid="uid://c3j5wvtcf2l0x" path="res://Assets/sprites/window.png" id="5_d0hx3"]
 [ext_resource type="Texture2D" uid="uid://choii5h4uep5p" path="res://Assets/sprites/counterFront.png" id="6_wue8u"]
 [ext_resource type="Texture2D" uid="uid://7i6dwe1g5fnd" path="res://Assets/sprites/counterRight.png" id="7_tmpy8"]
+[ext_resource type="Texture2D" uid="uid://dfmmvo3g2o8y4" path="res://Assets/sprites/trash.png" id="8_j6rcm"]
 [ext_resource type="PackedScene" uid="uid://d3q1hxfadyjr8" path="res://Scenes/dialogue_area.tscn" id="8_u43bp"]
 [ext_resource type="Texture2D" uid="uid://dbljdi7boobds" path="res://Assets/sprites/cherryLED.png" id="9_kds05"]
+[ext_resource type="Texture2D" uid="uid://r578slkvgao0" path="res://Assets/sprites/hay.png" id="9_x1b4w"]
 [ext_resource type="Texture2D" uid="uid://bio163jn2ubr7" path="res://Assets/sprites/cupcakeLED.png" id="10_mkfbx"]
 [ext_resource type="Texture2D" uid="uid://crf6bx458ryor" path="res://Assets/sprites/fairylights.png" id="11_mls6r"]
 [ext_resource type="Texture2D" uid="uid://eh3jjv31eh0s" path="res://Assets/sprites/jar.png" id="12_mna5b"]
@@ -5632,6 +5634,22 @@ scale = Vector2(2.1093752, 2.9609377)
 texture = ExtResource("7_tmpy8")
 flip_h = true
 
+[node name="Trash" type="Sprite2D" parent="Counters"]
+position = Vector2(-168, 138)
+texture = ExtResource("8_j6rcm")
+
+[node name="Hay" type="Sprite2D" parent="Counters"]
+position = Vector2(-181, 100)
+texture = ExtResource("9_x1b4w")
+
+[node name="Cautionsign" type="Sprite2D" parent="Counters"]
+position = Vector2(-121, 120)
+texture = ExtResource("21_bpnfi")
+
+[node name="Cautionsign2" type="Sprite2D" parent="Counters"]
+position = Vector2(-122, 136)
+texture = ExtResource("21_bpnfi")
+
 [node name="Lights" type="Node" parent="."]
 
 [node name="CherryLed" type="Sprite2D" parent="Lights"]
@@ -6107,7 +6125,7 @@ texture = ExtResource("44_a5etk")
 
 [node name="Blackbackground" type="Sprite2D" parent="."]
 z_index = -3
-position = Vector2(31, 153)
+position = Vector2(364.99997, 120)
 scale = Vector2(1.2224813, 1.5829642)
 texture = ExtResource("45_0m7hb")
 
