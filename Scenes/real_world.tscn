@@ -5562,7 +5562,7 @@ sources/2 = SubResource("TileSetAtlasSource_mnldv")
 size = Vector2(16, 19)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1utl6"]
-size = Vector2(34, 20)
+size = Vector2(34, 26)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dhc67"]
 size = Vector2(28, 20)
@@ -6097,7 +6097,7 @@ position = Vector2(-36, 13)
 
 [node name="bear" type="CollisionShape2D" parent="Storage Office/Bearplush/bearArea"]
 z_index = 1
-position = Vector2(28, -13)
+position = Vector2(25, -16)
 shape = SubResource("RectangleShape2D_1utl6")
 
 [node name="Couch" type="Node" parent="Storage Office"]

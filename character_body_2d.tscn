@@ -225,8 +225,11 @@ animations = [{
 script = SubResource("GDScript_ij6vw")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(-27, -29)
+position = Vector2(-22, -18.999996)
 scale = Vector2(3.6886792, 3.382716)
 sprite_frames = SubResource("SpriteFrames_8gu1l")
 animation = &"back-walk"
 frame_progress = 0.5540275
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatedSprite2D"]
+debug_color = Color(0.8482531, 0.00094163, 0.90545833, 0.41960785)
